@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSubmit(participant)" [formGroup]="participant">
+    <h1>
+        Scavenger Hunt
+    </h1>
+    <input type="email" formControlName="email" placeholder="Please enter your email address" />
+</form>
+
+{{ participant.email | json }}

@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Open Sans";
+    src: url('assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+h1, h2, h3, p, div, li, input {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #1976D2;
+    color: white;
+}
+
+h1 {
+    font-size: 5.5rem;
+    text-align: center;
+    margin: 10rem auto;
+    color: white;
+}
+form {
+    width: 70%;
+    margin: 10rem auto;
+}
+input {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 4rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 3px solid white;
+    color: white;
+}
+input:focus {
+    outline: none;
+}
+input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
