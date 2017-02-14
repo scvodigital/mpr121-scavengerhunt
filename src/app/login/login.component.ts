@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 import { StorageService } from '../storage/storage.service';
+import { Question, Questions_All } from '../Question';
 
 import { Participant } from '../Participant';
 import { Cmd } from '../Cmd';
@@ -15,10 +16,11 @@ export class LoginComponent implements OnInit {
     fruitListener = new FruitListener();
     currentUser: Participant = null;
     currentQuestion : string = null;
-    login: FormGroup;
+    participant: FormGroup;
     mode: string = "select";
+    lastKey: string = null;
     // Don't use key B, alt shift and B does something!
-    ALLOWED_KEYS = ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL']
+    ALLOWED_KEYS = ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyL']
     COMMAND_BACK = 'BACK';
     KEY_MAP = {
       'KeyA' : 'A',
@@ -28,47 +30,55 @@ export class LoginComponent implements OnInit {
       'KeyG' : 'E',
       'KeyH' : 'F',
       'KeyJ' : 'G',
-      'KeyK' : 'H',  // I know there is no H, do with this what you will, maybe Change instrument?
+      // 'KeyK' : 'H',  // I know there is no H, do with this what you will, maybe Change instrument?
       'KeyL' : Cmd.BACK,
     }
 
-    // Ode to joy: EEFG GFED CCDE EDD - EEFG GFED CCDE DCC
-    ANSWERS = {
-      A: ['E', 'E'],
-      B: ['F', 'G'],
-      C: ['G', 'F'],
-      D: ['E', 'D'],
-      E: ['C', 'C'],
-      F: ['D', 'E'],
-      G: ['E', 'D', 'D'],
+    QUESTIONS = {
+      A: Questions_All.Q1,
+      B: Questions_All.Q2,
+      C: Questions_All.Q3,
+      D: Questions_All.Q4,
+      E: Questions_All.Q5,
+      F: Questions_All.Q6,
+      G: Questions_All.Q7,
     }
 
     constructor(private st:StorageService) {}
 
     ngOnInit() {
-        this.login = new FormGroup({
-            email: new FormControl(''),
-        });
+      this.participant = new FormGroup({
+        email: new FormControl(''),
+      });
     }
 
-    onSubmit({ nouser, valid }: { nouser: Participant, valid: boolean }) {
-        console.log(nouser, valid);
-        this.currentUser = this.st.getUser(nouser.email)
+    qKeys() : string[] {
+      return Object.keys(this.QUESTIONS);
+    }
+
+    onSubmit({ value, valid }: { value:Participant, valid: boolean }, event) {
+        event.preventDefault();
+        console.log(value, valid);
+        this.currentUser = this.st.getUser(value.email)
     }
 
     logOut() {
-      this.mode = "select";
-      this.fruitListener.reset();
+      this.resetState();
       this.currentUser = null;
     }
 
     setQuestion(command : string){
       if (command === this.COMMAND_BACK) return this.logOut();
+      else if (this.currentUser.progress[command]){
+        return // No action, question done.
+      }
       else {
-        let sequence = this.ANSWERS[command];
+        let sequence = Questions_All.ANSWER_ARRAY[this.currentUser.getProgress()]
         if (!sequence) return console.error("No sequence associated with this key!");
+        this.QUESTIONS[command].generateSequences(sequence);
         this.fruitListener.load(sequence);
         this.currentQuestion = command;
+
         this.mode="go";
       }
     }
@@ -79,39 +89,47 @@ export class LoginComponent implements OnInit {
       }
       else {
         let isGood = this.fruitListener.listen(command);
+        this.lastKey = command + " (" + isGood + "!)"
+
         if (isGood == Cmd.WIN){
           return this.winQuestion();
         }
         if (isGood == Cmd.OK || isGood == Cmd.NO_ACTION){
           return;
         }
-        if (isGood = Cmd.DIE){
+        if (isGood = Cmd.INJURE){
           return this.injureUser();
         }
       }
     }
 
     backToSelect(){
+      this.resetState();
+      this.mode= "select";
+    }
+
+    resetState(){
       this.fruitListener.reset();
       this.currentQuestion = null;
-      this.mode= "select";
+      this.lastKey = null;
     }
 
     winQuestion(){
       this.currentUser.progress[this.currentQuestion] = true;
       this.st.saveUser(this.currentUser);
-      this.backToSelect()
+      this.mode = "win";
+      console.log("Win mode, " + this.mode);
     }
 
     injureUser(){
       this.currentUser.lives--;
       this.injureEffect();
-      if (this.currentUser.lives <= 0) this.mode = "failstate";
     }
 
     injureEffect(){
       // Play a sound? Special lighting effect? Dunno what to do here.
     }
+
 
   handleFruitCommand(command : string){
       if (!this.currentUser){
@@ -120,6 +138,8 @@ export class LoginComponent implements OnInit {
         this.setQuestion(command);
       } else if (this.mode === 'go'){
         this.answerQuestion(command);
+      } else if (this.mode === 'win'){
+        this.backToSelect();
       }
     }
 
@@ -139,7 +159,7 @@ export class LoginComponent implements OnInit {
 class FruitListener {
 
   sequence : string[] = null;
-  index : 0;
+  index : number = 0;
   lastNote : string = null;
 
   constructor(){}
@@ -173,7 +193,8 @@ class FruitListener {
       return Cmd.NO_ACTION;
     }
     else {
-      return Cmd.DIE;
+      this.lastNote = note;
+      return Cmd.INJURE;
     }
     // Wrong note
 

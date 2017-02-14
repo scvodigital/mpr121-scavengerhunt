@@ -6,5 +6,5 @@ export class Cmd {
   static NO_ACTION : string = "NO_ACTION";
   static OK : string = "OK";
   static WIN : string = "WIN";
-  static DIE : string = "DIE";
+  static INJURE : string = "INJURE";
 }

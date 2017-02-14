@@ -13,6 +13,7 @@ export class StorageService {
   all : {} = null;
   constructor(private storage:LocalStorageService) {
     this.all = storage.retrieve("allusers");
+    if (!this.all) this.all = {};
   }
 
   public getUser(email): Participant {

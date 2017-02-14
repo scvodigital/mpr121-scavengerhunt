@@ -8,16 +8,12 @@ import { Ng2Webstorage } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { QuestionComponent } from './question/question.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
-    QuestionComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,4 +21,12 @@ export class Participant {
     this.email = email;
   }
 
+  getProgress(){
+    let done : number = 0;
+    var prog = this.progress;
+    Object.keys(prog).forEach(function(key){
+        if (prog[key]) done++;
+    })
+    return done;
+  }
 }

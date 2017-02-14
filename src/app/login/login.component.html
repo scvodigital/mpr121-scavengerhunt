@@ -1,16 +1,41 @@
 <div *ngIf="!currentUser" >
-<form (ngSubmit)="onSubmit(login)" [formGroup]="login">
+<form (ngSubmit)="onSubmit(participant, $event)" [formGroup]="participant">
     <h1>
         Scavenger Hunt
     </h1>
     <input type="email" formControlName="email" placeholder="Please enter your email address" />
 </form>
 </div>
-<div *ngIf="currentUser && mode === 'select'">
-  <p>This is select mode!</p>
-</div>
-<div *ngIf="currentUser && mode === 'go'">
-  <p>This is go mode! Question is... {{currentQuestion}}</p>
+<div *ngIf="currentUser">
+  <h2>This is Logged In mode!</h2>
+  <h2>You have {{currentUser.lives}} Lives</h2>
 
+  <div *ngIf="mode === 'select'">
+    <h2>This is Select Mode, press a fruit!</h2>
+    <ul *ngFor="let key of qKeys()">
+      <li *ngIf="currentUser.progress[key] === false">
+        <h3>{{key}}: {{QUESTIONS[key].text}}</h3>
+        <!--<ul *ngFor="let answer of QUESTIONS[key].answers">-->
+          <!--<li>-->
+            <!--<p>{{answer.sequence}} {{answer.text}}</p>-->
+          <!--</li>-->
+        <!--</ul>-->
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="mode === 'go' || mode === 'win'">
+
+    <h2 *ngIf="mode === 'go'">This is go mode! Question is... {{currentQuestion}}</h2>
+    <h2 *ngIf="mode === 'win'">WIN! You have completed {{currentQuestion}}! Press any fruit to continue!</h2>
+    <h3>{{currentQuestion}}: {{QUESTIONS[currentQuestion].text}}</h3>
+    <ul *ngFor="let answer of QUESTIONS[currentQuestion].answers">
+      <li>
+        <p>{{answer.sequence}} {{answer.text}}</p>
+      </li>
+    </ul>
+    <h1>KEY PRESSED : {{lastKey}}</h1>
+
+  </div>
 
 </div>
