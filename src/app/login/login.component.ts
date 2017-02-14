@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+
+import { LocalStorageService, SessionStorageService } from 'ng2-webstorage';
+
 import { Participant } from './login.interface';
 
 @Component({
@@ -10,7 +13,12 @@ export class LoginComponent implements OnInit {
 
     participant: FormGroup;
 
+    constructor(private localSt:LocalStorageService) {}
+
     ngOnInit() {
+        this.localSt.observe('key')
+            .subscribe((value) => console.log('new value', value));
+
         this.participant = new FormGroup({
             email: new FormControl(''),
             progress: new FormGroup({
