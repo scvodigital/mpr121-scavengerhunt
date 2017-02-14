@@ -65,14 +65,17 @@ class Answer {
 export class Questions_All {
 
   public static ANSWER_ARRAY = [
-    ["E", "E"],
-    ["F", "G"],
-    ["G", "F"],
-    ["E", "D"],
-    ["C", "C"],
-    ["D", "E"],
-    ["E", "D", "D"],
     // Ode to joy: EEFG GFED CCDE EDD - EEFG GFED CCDE DCC
+
+    ["E", "E", "F", "G"],
+    ["G", "F", "E", "D"],
+    ["C", "C", "D", "E"],
+    ["E", "D", "D"],
+    ["E", "E", "F", "G", "G"],
+    ["F", "E", "D", "C", "C"],
+    ["D", "E", "D", "C", "C"],
+
+
   ]
   public static Q1 = new Question(
     "This is a question",
