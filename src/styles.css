@@ -11,18 +11,82 @@ body {
     background-color: #1976D2;
     color: white;
 }
+.container-fluid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
 h1 {
-    font-size: 5.5rem;
+    font-size: 4.7rem;
     text-align: center;
-    margin: 10rem auto;
+    margin: 8rem auto 6rem;
     color: white;
 }
+h1 .scvo-logo {
+    display: inline-block;
+    background-image: url('assets/images/scvo-large.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 5.56rem;
+    width: 18rem;
+    vertical-align: bottom;
+    margin-right: 0.5rem;
+}
+.lives {
+    background: #fff;
+    display: inline-block;
+    margin: 0;
+    padding: 0 1.5rem;
+    float: right;
+    border-radius: 10rem;
+    color: #1976D2;
+    font-weight: bold;
+    font-size: 3rem;
+    width: 15rem;
+    text-align: center;
+}
+.lives.dead {
+    font-size: 2.7rem;
+}
+.lives li {
+    list-style-type: none;
+    display: inline-block;
+    float: right;
+}
+.lives li .emoji-sizer {
+    margin-top: 1rem;
+}
+.selection {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.selection li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    width: 8rem;
+    height: 8rem;
+    border: 0.2rem solid white;
+    text-align: center;
+}
+.selection li h3 {
+    margin: 0;
+}
+.answers li {
+    list-style-type: lower-alpha;
+}
+.fruit {
+    font-size: 3rem;
+}
 form {
-    width: 70%;
+    width: 80%;
     margin: 10rem auto;
 }
 input {
+    text-align: center;
     display: block;
     position: relative;
     box-sizing: border-box;
@@ -31,7 +95,8 @@ input {
     padding: 1rem 2rem;
     background: transparent;
     border: 3px solid white;
-    color: white;
+    color: transparent;
+    text-shadow: 0 0 0 white;
 }
 input:focus {
     outline: none;
