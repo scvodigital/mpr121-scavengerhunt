@@ -20,7 +20,7 @@ body {
 h1 {
     font-size: 4.7rem;
     text-align: center;
-    margin: 8rem auto 6rem;
+    margin: 2rem auto 3rem;
     color: white;
 }
 h1 .scvo-logo {
@@ -69,7 +69,7 @@ h1 .scvo-logo {
     padding: 0.5rem;
     margin: 0 2rem 2rem 0;
     width: 18rem;
-    height: 18rem;
+    height: 17rem;
     vertical-align: bottom;
     border: 0.2rem solid white;
     border-radius: 0.5rem;
@@ -89,7 +89,7 @@ h1 .scvo-logo {
     font-size: 3rem;
 }
 .question h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .question .answers {
     margin-left: 0.8rem;
