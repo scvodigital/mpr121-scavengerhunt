@@ -45,8 +45,7 @@ export class AppComponent implements OnInit {
         C: Questions_All.Q3,
         D: Questions_All.Q4,
         E: Questions_All.Q5,
-        F: Questions_All.Q6,
-        G: Questions_All.Q7,
+        F: Questions_All.Q6
     }
 
     constructor(private st:StorageService) {}
@@ -78,7 +77,7 @@ export class AppComponent implements OnInit {
         this.focusSettingEventEmitter.emit(true);
     }
 
-    setQuestion(command : string) {
+    setQuestion(command: string) {
         if (command === this.COMMAND_BACK) {
             return this.logOut();
         } else if (this.currentUser.progress[command]) {
@@ -94,7 +93,7 @@ export class AppComponent implements OnInit {
         }
     }
 
-    answerQuestion(command : string) {
+    answerQuestion(command: string) {
         if (command === this.COMMAND_BACK){
             this.backToSelect();
         }
@@ -146,11 +145,11 @@ export class AppComponent implements OnInit {
     handleFruitCommand(command : string) {
         if (!this.currentUser){
             console.log("Not logged in, not doing anything");
-        } else if (this.mode === 'select'){
+        } else if (this.mode === 'select') {
             this.setQuestion(command);
-        } else if (this.mode === 'go'){
+        } else if (this.mode === 'go') {
             this.answerQuestion(command);
-        } else if (this.mode === 'win'){
+        } else if (this.mode === 'win') {
             this.backToSelect();
         }
     }

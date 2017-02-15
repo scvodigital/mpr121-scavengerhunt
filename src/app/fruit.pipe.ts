@@ -5,25 +5,25 @@ export class FruitPipe implements PipeTransform {
         let fruit = '';
         switch (letter) {
             case 'A':
-                fruit = '<span class="a fruit wee-orange">🍊</span>'; // Wee orange
+                fruit = '<span class="a fruit wee-orange twa twa-tangerine"></span>'; // Wee orange
                 break;
             case 'B':
-                fruit = '<span class="b fruit red-apple">🍎</span>'; // Red Apple
+                fruit = '<span class="b fruit red-apple twa twa-apple"></span>'; // Red Apple
                 break;
             case 'C':
-                fruit = '<span class="c fruit lemon">🍋</span>'; // Lemon
+                fruit = '<span class="c fruit lemon twa twa-lemon"></span>'; // Lemon
                 break;
             case 'D':
-                fruit = '<span class="d fruit pear">🍐</span>'; // Pear
+                fruit = '<span class="d fruit pear twa twa-pear"></span>'; // Pear
                 break;
             case 'E':
-                fruit = '<span class="e fruit peach">🍑</span>'; // Peach
+                fruit = '<span class="e fruit peach twa twa-peach"></span>'; // Peach
                 break;
             case 'F':
-                fruit = '<span class="f fruit pineapple">🍍</span>'; // Pineapple
+                fruit = '<span class="f fruit pineapple twa twa-pineapple"></span>'; // Pineapple
                 break;
             case 'G':
-                fruit = '<span class="g fruit banana">🍌</span>'; // Banana
+                fruit = '<span class="g fruit banana twa twa-banana"></span>'; // Banana
                 break;
         }
         return fruit;

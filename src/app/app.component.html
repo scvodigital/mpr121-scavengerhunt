@@ -11,16 +11,19 @@
         <!-- <h2>This is Logged In mode!</h2> -->
         <!-- <h2>You have {{currentUser.lives}} Lives</h2> -->
         <ul class="lives">
-            <li *ngFor="let live of createRange(this.currentUser.lives)">♥</li>
+            <li *ngFor="let live of createRange(this.currentUser.lives)"><span class="twa twa-heart"></span></li>
+            <li *ngFor="let live of createRange(5-this.currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
         </ul>
 
         <div *ngIf="mode === 'select'">
             <!-- <h2>This is Select Mode, press a fruit!</h2> -->
-            <h2>Which organisation have you visited?</h2>
+            <!-- <h2>Which organisation have you visited?</h2> -->
             <ul class="selection">
                 <li *ngFor="let key of qKeys()">
-                    <h3 *ngIf="currentUser.progress[key] === false">{{QUESTIONS[key].organisation}}</h3>
-                    <div [innerHTML]="key | fruit" class="question-select"></div>
+                    <div *ngIf="currentUser.progress[key] === false" [innerHTML]="key | fruit" class="question-select"></div>
+                    <div *ngIf="currentUser.progress[key] === true" class="question-done"><span class="a fruit twa twa-white-check-mark"></span></div>
+                    <h2>{{QUESTIONS[key].organisation}}</h2>
+                    <h3>{{QUESTIONS[key].question}}</h3>
                     <!--<ul *ngFor="let answer of QUESTIONS[key].answers">-->
                     <!--<li>-->
                     <!--<p>{{answer.sequence}} {{answer.text}}</p>-->
@@ -28,22 +31,33 @@
                     <!--</ul>-->
                 </li>
             </ul>
+
+            <ul class="progress">
+                <li *ngFor="let key of qKeys()">
+                    <div *ngIf="currentUser.progress[key] === true">
+                        <!-- <div *ngFor="let answer of QUESTIONS[key].answers">
+                            <span class="fruit-sequence"><span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span></span>
+                        </div> -->
+                        {{key}} complete
+                    </div>
+                </li>
+            </ul>
         </div>
 
-        <div *ngIf="mode === 'go'">
+        <div *ngIf="mode === 'go'" class="question">
             <!-- <h2 *ngIf="mode === 'go'">This is go mode! Question is... {{currentQuestion}}</h2> -->
             <h2>{{QUESTIONS[currentQuestion].organisation}}</h2>
             <h3>{{QUESTIONS[currentQuestion].question}}</h3>
             <ol class="answers">
                 <li *ngFor="let answer of QUESTIONS[currentQuestion].answers">
-                    <p><span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span> {{answer.answer}}</p>
+                    <p><span class="answer">{{answer.answer}}</span> <span class="fruit-sequence"><span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span></span></p>
                 </li>
             </ol>
-            <h1>KEY PRESSED : {{lastKey | fruit}}</h1>
+            <h2>Fruit selected: <span [innerHTML]="lastKey | fruit" class="question-select"></span></h2>
         </div>
 
         <div *ngIf="mode === 'win'">
-            <h2>You have correctly answered {{currentQuestion}}! Press any fruit to continue!</h2>
+            <h2>Well done! You have correctly answered the question for {{QUESTIONS[currentQuestion].organisation}}. Please touch any connected item of fruit to continue...</h2>
         </div>
     </div>
 

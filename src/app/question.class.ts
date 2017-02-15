@@ -67,30 +67,32 @@ class Answer {
 export class Questions_All {
 
     public static ANSWER_ARRAY = [
-        ['E', 'E', 'F'],
-        ['G', 'G', 'F'],
-        ['E', 'D', 'C'],
-        ['C', 'D', 'E'],
-        ['E', 'D', 'D'],
-        ['E', 'E', 'F'],
-        ['G', 'G', 'F']
+        ['E','E','F','G','G'],
+        ['F','E','D','C','C'],
+        ['D','E','E','D','D'],
+
+        ['E','E','F','G','G'],
+        ['F','E','D','C','C'],
+        ['D','E','D','C','C']
+
         // Ode to joy: EEFG GFED CCDE EDD - EEFG GFED CCDE DCC
     ]
+
     public static Q1 = new Question(
-        "Organisation 1",
-        "This is a question",
+        "SCVO Team Digital",
+        "What does the HQ in Good HQ stand for?",
         [
-            new Answer("This is a wrong answer",  false),
-            new Answer("This is another wrong answer", false),
-            new Answer("This is the RIGHT answer", true),
-            new Answer("This is another wrong answerz", false),
+            new Answer("Honorary consulate", false),
+            new Answer("Headquarters", true),
+            new Answer("Highly Qualified", false),
+            new Answer("Hard Questions", false),
         ]
     )
     public static Q2 = new Question(
         "Organisation 2",
-        "This is a question",
+        "This is a very long question. I don't know why anyone would want to have a question as long as this one but here it is in order to test. What was the question?",
         [
-            new Answer("This is a wrong answer",  false),
+            new Answer("This is a wrong answer", false),
             new Answer("This is another RIGHT answer", true),
             new Answer("This is a further wrogn answer", false),
             new Answer("This is another wrong answer and a half", false),
@@ -136,14 +138,14 @@ export class Questions_All {
             new Answer("This is another wrong answer and a half", false),
         ]
     )
-    public static Q7 = new Question(
-        "Organisation 7",
-        "This is a question",
-        [
-            new Answer("This is a wrong answer",  false),
-            new Answer("This is another wrong answer", false),
-            new Answer("This is a further RIGHT answer", true),
-            new Answer("This is another wrong answer and a half", false),
-        ]
-    )
+    // public static Q7 = new Question(
+    //     "Organisation 7",
+    //     "This is a question",
+    //     [
+    //         new Answer("This is a wrong answer",  false),
+    //         new Answer("This is another wrong answer", false),
+    //         new Answer("This is a further RIGHT answer", true),
+    //         new Answer("This is another wrong answer and a half", false),
+    //     ]
+    // )
 }
