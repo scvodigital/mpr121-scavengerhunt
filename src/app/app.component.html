@@ -38,7 +38,18 @@
                         <!-- <div *ngFor="let answer of QUESTIONS[key].answers">
                             <span class="fruit-sequence"><span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span></span>
                         </div> -->
-                        {{key}} complete
+                        <!-- <ol class="answers">
+                            <li *ngFor="let answer of QUESTIONS[key].answers">
+                                <p>
+                                    <span class="answer">{{answer.answer}}</span>
+                                    <span class="fruit-sequence">
+                                        <span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit">
+                                        </span>
+                                    </span>
+                                </p>
+                            </li>
+                        </ol> -->
+                        <!-- {{key}} complete -->
                     </div>
                 </li>
             </ul>
@@ -50,14 +61,21 @@
             <h3>{{QUESTIONS[currentQuestion].question}}</h3>
             <ol class="answers">
                 <li *ngFor="let answer of QUESTIONS[currentQuestion].answers">
-                    <p><span class="answer">{{answer.answer}}</span> <span class="fruit-sequence"><span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span></span></p>
+                    <p>
+                        <span class="answer">{{answer.answer}}</span>
+                        <span class="fruit-sequence">
+                            <span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span>
+                        </span>
+                    </p>
                 </li>
             </ol>
             <h2>Fruit selected: <span [innerHTML]="lastKey | fruit" class="question-select"></span></h2>
         </div>
 
-        <div *ngIf="mode === 'win'">
-            <h2>Well done! You have correctly answered the question for {{QUESTIONS[currentQuestion].organisation}}. Please touch any connected item of fruit to continue...</h2>
+        <div *ngIf="mode === 'win'" class="question">
+            <h2>Well done!</h2>
+            <h3>You have correctly answered the question for {{QUESTIONS[currentQuestion].organisation}}.</h3>
+            <h3>Please touch any connected item of fruit to continue...</h3>
         </div>
     </div>
 

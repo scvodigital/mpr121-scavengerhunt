@@ -72,7 +72,7 @@ h1 .scvo-logo {
     height: 18rem;
     vertical-align: bottom;
     border: 0.2rem solid white;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     text-align: center;
 }
 .selection li h2 {
@@ -145,7 +145,8 @@ input {
     font-size: 4rem;
     padding: 1rem 2rem;
     background: transparent;
-    border: 3px solid white;
+    border: 0.2rem solid white;
+    border-radius: 0.3rem;
     color: transparent;
     text-shadow: 0 0 0 white;
 }

@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
     onSubmit({ value, valid }: { value:Participant, valid: boolean }, event) {
         event.preventDefault();
         // console.log(value, valid);
-        this.currentUser = this.st.getUser(value.email)
+        this.currentUser = this.st.getUser(value.email.toLowerCase())
     }
 
     logOut() {

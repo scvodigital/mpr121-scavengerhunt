@@ -54,6 +54,7 @@ class Answer {
     answer: string;
     sequence: string[];
     right: boolean;
+
     constructor (answer: string, right: boolean) {
         this.answer = answer;
         this.right = right;
