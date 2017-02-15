@@ -80,11 +80,11 @@ KEY_MAPPING = {
                 2: uinput.KEY_A,  #These are keys used (with SHIFT and ALT)
                 3: uinput.KEY_S, 
                 4: uinput.KEY_D, 
-                5: uinput.KEY_Z, 
-                6: uinput.KEY_X, 
-                7: uinput.KEY_C, #F13 - F18 are good and harmless, f after that not functional 
-		8: uinput.KEY_V, 
-		9: uinput.KEY_B,
+                5: uinput.KEY_F, 
+                6: uinput.KEY_G, 
+                7: uinput.KEY_H, #F13 - F18 are good and harmless, f after that not functional 
+		8: uinput.KEY_L, 
+		9: uinput.KEY_K,
 		10: uinput.KEY_N,
 		11: uinput.KEY_M,
 		12: uinput.KEY_LEFTSHIFT,
