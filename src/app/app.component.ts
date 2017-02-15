@@ -85,6 +85,7 @@ export class AppComponent implements OnInit {
         } else {
             let sequence = Questions_All.ANSWER_ARRAY[this.getProgress()];
             if (!sequence) return console.error("No sequence associated with this key!");
+            console.log(this.QUESTIONS[command]);
             this.QUESTIONS[command].generateSequences(sequence);
             this.fruitListener.load(sequence);
             this.currentQuestion = command;

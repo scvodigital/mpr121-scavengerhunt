@@ -91,18 +91,26 @@ h1 .scvo-logo {
 .question h3 {
     font-size: 2.5rem;
 }
+.question h4 {
+    font-size: 1.9rem;
+}
 .question .answers {
     margin-left: 0.8rem;
 }
 .question .answers li {
     list-style-type: lower-alpha;
-    font-size: 3rem;
+    font-size: 2.2rem;
     border-bottom: 0.2rem solid rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+.question .answers li p {
+    margin: 1.8rem 0;
 }
 .question .answers li:last-child {
     border-bottom: none;
 }
 .question .answers .answer {
+    font-weight: normal;
     width: 75%;
     display: inline-block;
 }

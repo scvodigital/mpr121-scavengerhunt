@@ -16,7 +16,7 @@ export class Question {
         }
     }
 
-    generateSequences (right_sequence : string[]) {
+    generateSequences (right_sequence: string[]) {
         let index = 0;
         let used_seqs : string[]= [right_sequence.toString()];
         while (index < this.answers.length){
@@ -95,8 +95,8 @@ export class Questions_All {
         [
             new Answer("This is a wrong answer", false),
             new Answer("This is another RIGHT answer", true),
-            new Answer("This is a further wrogn answer", false),
-            new Answer("This is another wrong answer and a half", false),
+            new Answer("This is a further wrong answer", false),
+            new Answer("This is another wrong answer that is longer than the rest", false),
         ]
     )
     public static Q3 = new Question(
@@ -105,8 +105,8 @@ export class Questions_All {
         [
             new Answer("This is a wrong answer",  false),
             new Answer("This is another wrong answer", false),
-            new Answer("This is a further RIGHT answer", true),
-            new Answer("This is another wrong answer and a half", false),
+            new Answer("This is a further RIGHT answer that is longer than the rest", true),
+            new Answer("This is another wrong answer", false),
         ]
     )
     public static Q4 = new Question(
@@ -114,19 +114,19 @@ export class Questions_All {
         "This is a question",
         [
             new Answer("This is a RIGHT answer",  true),
-            new Answer("This is another wrong answer", false),
-            new Answer("This is a further wrogn answer", false),
-            new Answer("This is another wrong answer and a half", false),
+            new Answer("This is another wrong answer that is longer than the rest", false),
+            new Answer("This is a further wrong answer", false),
+            new Answer("This is another wrong answer and more", false),
         ]
     )
     public static Q5 = new Question(
         "Organisation 5",
-        "This is a question",
+        "This is a question that is longer than the rest",
         [
             new Answer("This is a wrong answer",  false),
-            new Answer("This is another wrong answer", false),
-            new Answer("This is a further wrogn answer", false),
-            new Answer("This is another RIGHT answer and a half", true),
+            new Answer("This is another wrong answer that is longer than the rest", false),
+            new Answer("This is a further wrong answer", false),
+            new Answer("This is another RIGHT answer that is longer than the rest", true),
         ]
     )
     public static Q6 = new Question(
@@ -135,7 +135,7 @@ export class Questions_All {
         [
             new Answer("This is a wrong answer",  false),
             new Answer("This is another RIGHT answer", true),
-            new Answer("This is a further wrogn answer", false),
+            new Answer("This is a further wrong answer", false),
             new Answer("This is another wrong answer and a half", false),
         ]
     )
