@@ -74,16 +74,16 @@ import uinput
 
 
 # Define mapping of capacitive touch pin presses to keyboard button presses.
-KEY_MAPPING = { 
+KEY_MAPPING = {
                 0: uinput.KEY_CLOSECD, #Not used
-                1: uinput.KEY_EJECTCD, #Not used 
-                2: uinput.KEY_A,  #These are keys used (with SHIFT and ALT)
-                3: uinput.KEY_S, 
-                4: uinput.KEY_D, 
-                5: uinput.KEY_F, 
-                6: uinput.KEY_G, 
-                7: uinput.KEY_H, #F13 - F18 are good and harmless, f after that not functional 
-		8: uinput.KEY_L, 
+                1: uinput.KEY_A,  #These are keys used (with SHIFT and ALT)
+                2: uinput.KEY_S,
+                3: uinput.KEY_D,
+                4: uinput.KEY_F,
+                5: uinput.KEY_G,
+                6: uinput.KEY_H,
+                7: uinput.KEY_J,
+        		8: uinput.KEY_L,
 		9: uinput.KEY_K,
 		10: uinput.KEY_N,
 		11: uinput.KEY_M,
@@ -131,7 +131,7 @@ cap.touched()
 # Event loop to wait for IRQ pin changes and respond to them.
 print 'Press Ctrl-C to quit.'
 while True:
-    # Wait for the IRQ pin to drop or too much time ellapses (to help prevent 
+    # Wait for the IRQ pin to drop or too much time ellapses (to help prevent
     # missing an IRQ event and waiting forever).
     start = time.time()
     while (time.time() - start) < MAX_EVENT_WAIT_SECONDS and not GPIO.event_detected(IRQ_PIN):
