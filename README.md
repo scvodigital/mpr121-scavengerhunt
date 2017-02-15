@@ -1,7 +1,7 @@
 # A Fruit Keyboard for The Gathering 2017
 
-🍌
+To run:
 
-How to run:
+`./run_me.sh`
 
-`npm start`
+Wait for webpack to serve then visit localhost:4200
