@@ -69,6 +69,16 @@ export class AppComponent implements OnInit {
 
   onSubmit({ value, valid }: { value:Participant, valid: boolean }, event) {
     event.preventDefault();
+    if (value.email === Cmd.CODE_DELETE_ALL){
+      return this.st.deleteAll();
+    }
+    if (value.email === Cmd.CODE_PRINT_ALL){
+      return this.st.usersToConsole(0);
+    }
+    if (value.email === Cmd.CODE_PRINT_WINNERS){
+      return this.st.usersToConsole(this.WIN);
+    }
+
     // console.log(value, valid);
     this.currentUser = this.st.getUser(value.email.toLowerCase())
     this.setProgressBar();
@@ -89,7 +99,7 @@ export class AppComponent implements OnInit {
     } else if (this.currentUser.progress[command] || command === 'G') {
       return // No action, question done.
     } else {
-      let sequence = Questions_All.ANSWER_ARRAY[this.getProgress()];
+      let sequence = Questions_All.ANSWER_ARRAY[Participant.getProgress(this.currentUser)];
       // if (!sequence) return console.error("No sequence associated with this key!");
       // console.log(this.QUESTIONS[command]);
       this.QUESTIONS[command].generateSequences(sequence);
@@ -141,7 +151,7 @@ export class AppComponent implements OnInit {
 
   setProgressBar(){
     // Gets answers up to now. Inefficient, but doesn't leave variables hanging around to be wrong.
-    this.progress = this.getProgress();
+    this.progress = Participant.getProgress(this.currentUser);
     let out = [];
     for (var x = 0; x < this.progress ; x++){
       var aa = Questions_All.ANSWER_ARRAY[x];
@@ -188,15 +198,6 @@ export class AppComponent implements OnInit {
       this.handleFruitCommand(command);
     }
     return;
-  }
-
-  getProgress() {
-    let done : number = 0;
-    var prog = this.currentUser.progress;
-    Object.keys(prog).forEach(function(key){
-      if (prog[key]) done++;
-    })
-    return done;
   }
 
   createRange(number) {

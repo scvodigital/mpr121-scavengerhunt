@@ -11,8 +11,8 @@
         <!-- <h2>This is Logged In mode!</h2> -->
         <!-- <h2>You have {{currentUser.lives}} Lives</h2> -->
         <ul class="lives">
-            <li *ngFor="let live of createRange(this.currentUser.lives)"><span class="twa twa-heart"></span></li>
-            <li *ngFor="let live of createRange(5-this.currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
+            <li *ngFor="let live of createRange(currentUser.lives)"><span class="twa twa-heart"></span></li>
+            <li *ngFor="let live of createRange(5-currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
         </ul>
 
         <div class="winner" *ngIf="progress === WIN">

@@ -7,4 +7,7 @@ export class Cmd {
     static OK : string = "OK";
     static WIN : string = "WIN";
     static INJURE : string = "INJURE";
+    static CODE_DELETE_ALL : string = "DELETE_ALL@DRAGONFRUIT";
+    static CODE_PRINT_ALL : string = "PRINT_ALL@DRAGONFRUIT";
+    static CODE_PRINT_WINNERS : string = "PRINT_WINNERS@DRAGONFRUIT";
 }

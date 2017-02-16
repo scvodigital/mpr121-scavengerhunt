@@ -67,6 +67,7 @@ class Answer {
 
 export class Questions_All {
 
+
     public static ANSWER_ARRAY = [
         ['E','E','F','G','G'],
         ['F','E','D','C','C'],
