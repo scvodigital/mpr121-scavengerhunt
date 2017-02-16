@@ -71,12 +71,10 @@ export class Questions_All {
         ['E','E','F','G','G'],
         ['F','E','D','C','C'],
         ['D','E','E','D','D'],
-
         ['E','E','F','G','G'],
         ['F','E','D','C','C'],
         ['D','E','D','C','C']
-
-        // Ode to joy: EEFG GFED CCDE EDD - EEFG GFED CCDE DCC
+        // Ode to joy: EEFGG FEDCC DEEDD - EEFGG FEDCC DEDCC
     ]
 
     public static Q1 = new Question(

@@ -57,6 +57,16 @@ h1 .scvo-logo {
 .lives li .fruit {
     margin-top: 1rem;
 }
+.winner h2 {
+  clear: right;
+  margin: 0;
+  padding: 1em 0 0 0;
+  float: right;
+  font-weight: bold;
+  font-size: 3rem;
+  width: 17.9rem;
+  text-align: center;
+}
 .selection {
     margin: 0;
     padding: 0;
@@ -121,15 +131,14 @@ h1 .scvo-logo {
 .progress {
     background: #fff;
     display: inline-block;
-    padding: 0;
-    float: right;
+    padding: 0 1em;
     border-radius: 10rem;
     color: #1976D2;
     font-weight: bold;
     font-size: 3rem;
-    width: 100%;
+    width: 21em;
     text-align: left;
-    margin: 1rem 0;
+    margin: -1rem -3rem;
 }
 .progress li {
     list-style-type: none;
