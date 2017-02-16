@@ -1,1 +1,88 @@
-<app-login></app-login>
+<div class="container-fluid">
+    <h1>
+        <span class="scvo-logo"></span>Scavenger Hunt
+    </h1>
+    <div *ngIf="!currentUser" >
+        <form (ngSubmit)="onSubmit(participant, $event)" [formGroup]="participant">
+            <input type="email" formControlName="email" [(ngModel)]="email_input" placeholder="Please enter your email address" autocomplete="off" [autofocus] />
+        </form>
+    </div>
+    <div *ngIf="currentUser && this.currentUser.lives > 0">
+        <!-- <h2>This is Logged In mode!</h2> -->
+        <!-- <h2>You have {{currentUser.lives}} Lives</h2> -->
+        <ul class="lives">
+            <li *ngFor="let live of createRange(this.currentUser.lives)"><span class="twa twa-heart"></span></li>
+            <li *ngFor="let live of createRange(5-this.currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
+        </ul>
+
+        <div *ngIf="mode === 'select'">
+            <!-- <h2>This is Select Mode, press a fruit!</h2> -->
+            <!-- <h2>Which organisation have you visited?</h2> -->
+            <ul class="selection">
+                <li *ngFor="let key of qKeys()">
+                    <div *ngIf="currentUser.progress[key] === false" [innerHTML]="key | fruit" class="question-select"></div>
+                    <div *ngIf="currentUser.progress[key] === true" class="question-done"><span class="a fruit twa twa-white-check-mark"></span></div>
+                    <h2>{{QUESTIONS[key].organisation}}</h2>
+                    <h3>{{QUESTIONS[key].question}}</h3>
+                    <!--<ul *ngFor="let answer of QUESTIONS[key].answers">-->
+                    <!--<li>-->
+                    <!--<p>{{answer.sequence}} {{answer.text}}</p>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+
+            <ul class="progress">
+                <li *ngFor="let key of qKeys()">
+                    <div *ngIf="currentUser.progress[key] === true">
+                        <!-- <div *ngFor="let answer of QUESTIONS[key].answers">
+                            <span class="fruit-sequence"><span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span></span>
+                        </div> -->
+                        <!-- <ol class="answers">
+                            <li *ngFor="let answer of QUESTIONS[key].answers">
+                                <p>
+                                    <span class="answer">{{answer.answer}}</span>
+                                    <span class="fruit-sequence">
+                                        <span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit">
+                                        </span>
+                                    </span>
+                                </p>
+                            </li>
+                        </ol> -->
+                        <!-- {{key}} complete -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div *ngIf="mode === 'go'" class="question">
+            <!-- <h2 *ngIf="mode === 'go'">This is go mode! Question is... {{currentQuestion}}</h2> -->
+            <h2>{{QUESTIONS[currentQuestion].organisation}}</h2>
+            <h3>{{QUESTIONS[currentQuestion].question}}</h3>
+            <ol class="answers">
+                <li *ngFor="let answer of QUESTIONS[currentQuestion].answers">
+                    <p>
+                        <span class="answer">{{answer.answer}}</span>
+                        <span class="fruit-sequence">
+                            <span *ngFor="let item of answer.sequence" [innerHTML]="item | fruit"></span>
+                        </span>
+                    </p>
+                </li>
+            </ol>
+            <h2>Fruit selected: <span [innerHTML]="lastKey | fruit" class="question-select"></span></h2>
+        </div>
+
+        <div *ngIf="mode === 'win'" class="question">
+            <h2>Well done!</h2>
+            <h4>You have correctly answered the question for {{QUESTIONS[currentQuestion].organisation}}.</h4>
+            <h4>Please touch any connected item of fruit to continue...</h4>
+        </div>
+    </div>
+
+    <div *ngIf="currentUser && this.currentUser.lives <= 0">
+        <div class="lives dead">
+            Out of lives!
+        </div>
+        <h2>Sorry, you got too many questions wrong!</h2>
+    </div>
+</div>

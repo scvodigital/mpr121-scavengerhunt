@@ -28,7 +28,7 @@ def setup_capacitive_hat():
 	# Create MPR121 instance.
 	cap = MPR121.MPR121()
 
-	# Initialize communication with MPR121 using default I2C bus of device, and 
+	# Initialize communication with MPR121 using default I2C bus of device, and
 	# default I2C address (0x5A).  On BeagleBone Black will default to I2C bus 0.
 	if not cap.begin():
     		print 'Error initializing MPR121.  Check your wiring!'
@@ -73,22 +73,22 @@ def midiExample():
     #Not all instruments will work :(, I only tested this
     GRAND_PIANO = 0
     CHURCH_ORGAN = 19
-    GUITAR=25
-    DRUMB=115
-    SAX=65
-    VIOLA=42
-    TROMBONE=58
-    
-    instrument_array=[GRAND_PIANO,CHURCH_ORGAN,GUITAR,DRUMB,SAX,VIOLA,TROMBONE]
+    # GUITAR=25
+    # DRUMB=115
+    # SAX=65
+    # VIOLA=42
+    # TROMBONE=58
+
+    instrument_array=[GRAND_PIANO,CHURCH_ORGAN]
     current_instrument=0
-    
+
     #Init the pygame system
-    pygame.init()	
+    pygame.init()
 
     #Init the pygame midi system
     pygame.midi.init()
 
-    
+
     #Setup the output number 2, this is the timidity interface (check the beginning of the file)
     midi_out = pygame.midi.Output(2, 0)
 
@@ -105,7 +105,7 @@ def midiExample():
 
 	# Main loop to print a message every time a pin is touched.
 	print 'Press Ctrl-C to quit.'
-	last_touched = cap.touched()	
+	last_touched = cap.touched()
 
 	while True:
     		current_touched = cap.touched()
@@ -137,12 +137,12 @@ def midiExample():
 
 					notes_offset=[x+12*octave for x in notes]
 				elif i==9:
-					#Do nothing, se need reserve this case for the 
+					#Do nothing, se need reserve this case for the
 					#Decrement event
 					print ""
-				else:				
+				else:
 					midi_out.note_on(notes_offset[i],127)
-				
+
         		# Next check if transitioned from touched to not touched.
         		if not current_touched & pin_bit and last_touched & pin_bit:
             			print '{0} released!'.format(i)
@@ -167,7 +167,7 @@ def midiExample():
     		last_touched = current_touched
     		time.sleep(0.1)
 
-	
+
 
     finally:
         del midi_out

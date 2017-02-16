@@ -1,28 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { Ng2Webstorage } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-
+import { FocusDirective } from './focus.directive';
+import { FruitPipe } from './fruit.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpModule,
-    Ng2Webstorage
-  ],
-  providers: [
-  ],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        HttpModule,
+        Ng2Webstorage
+    ],
+    declarations: [
+        AppComponent,
+        FocusDirective,
+        FruitPipe
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
