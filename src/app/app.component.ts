@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   lastKey: string = null;
   email_input: string = null;
   progressBar : string[] = [];
-
+  winnerstext : string[] = [];
   public focusSettingEventEmitter = new EventEmitter<boolean>();
 
   // Don't use key B, alt shift and B does something!
@@ -78,7 +78,11 @@ export class AppComponent implements OnInit {
     if (value.email === Cmd.CODE_PRINT_WINNERS){
       return this.st.usersToConsole(this.WIN);
     }
-
+    if (value.email === Cmd.CODE_PICK_WINNERS){
+      this.winnerstext = this.st.pickWinners(this.WIN);
+      return
+    }
+    this.winnerstext = [];
     // console.log(value, valid);
     this.currentUser = this.st.getUser(value.email.toLowerCase())
     this.setProgressBar();

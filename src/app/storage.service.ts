@@ -51,6 +51,28 @@ export class StorageService {
 
   }
 
+  /** Gives texty winners for each day. */
+  public pickWinners(winscore){
+    let allthis = this.all;
+    let winnergroups = {};
+    let winners = [];
+    Object.keys(allthis).forEach(function(key){
+      let p :Participant = allthis[key];
+      if (winscore){
+        if (Participant.getProgress(p) < winscore) return;
+      }
+      if (!winnergroups[p.day]) winnergroups[p.day] = [];
+        winnergroups[p.day].push(p.email);
+    })
+
+    Object.keys(winnergroups).forEach(function(key){
+      let listOfWinners = winnergroups[key];
+      if (listOfWinners.length){
+        winners.push("DAY: " + key + " WINNER:" + listOfWinners[Math.floor(Math.random() * listOfWinners.length)]);
+      }
+    })
+    return winners;
+  }
 
   persist() {
     this.storage.store("allusers", this.all);
