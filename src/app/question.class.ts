@@ -83,7 +83,7 @@ export class Questions_All {
   ]
 
     public static Q1 = new Question(
-        "SCVO Team Digital",
+        "SCVO Team Digital (you are here!)",
         "Who is Good HQ being built by?",
         [
             new Answer("SCVO Comms", false),
@@ -103,13 +103,13 @@ export class Questions_All {
         ]
     )
     public static Q3 = new Question(
-        "Organisation 3",
-        "This is a question",
+        "Browsealoud (stand 7)",
+        "How many languages does Browsealoud offer?",
         [
-            new Answer("This is a wrong answer",  false),
-            new Answer("This is another wrong answer", false),
-            new Answer("This is a further RIGHT answer that is longer than the rest", true),
-            new Answer("This is another wrong answer", false),
+            new Answer("7",  false),
+            new Answer("100", false),
+            new Answer("99", true),
+            new Answer("128", false),
         ]
     )
     public static Q4 = new Question(
