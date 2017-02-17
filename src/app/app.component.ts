@@ -178,7 +178,6 @@ export class AppComponent implements OnInit {
     } else if (this.mode === 'select') {
       this.setQuestion(command);
     } else if (this.mode === 'go') {
-        console.log(command + "pressed");
       this.answerQuestion(command);
     } else if (this.mode === 'win') {
       this.backToSelect();

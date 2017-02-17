@@ -35,10 +35,12 @@
                 </li>
             </ul>
 
-            <ul *ngIf="progressBar.length > 0" class="progress fruit-sequence">
-                <li *ngFor="let answer of progressBar">
-                    <span [innerHTML]="answer | fruit"></span>
-                </li>
+            <ul *ngIf="progressBar.length > 0" class="progress">
+                <div class="fruit-sequence">
+                    <li *ngFor="let answer of progressBar">
+                        <span [innerHTML]="answer | fruit"></span>
+                    </li>
+                </div>
             </ul>
         </div>
 
@@ -57,28 +59,29 @@
                 </li>
             </ol>
 
-            <ul class="progress fruit-sequence">
-                <div *ngIf="fruitListener.error">
-                    <li>XXX Bad fruit - Start again!</li>
+            <ul class="progress">
+                <div *ngIf="fruitListener.error" class="fruit-sequence">
+                    <li><span class="fruit twa twa-point-right"></span></li>
+                    <li><span class="fruit twa twa-sweat"></span></li>
                 </div>
-                <div *ngIf="!fruitListener.error">
-                    <li>Selected:</li>
+                <div *ngIf="!fruitListener.error" class="fruit-sequence">
+                    <li><span class="fruit twa twa-point-right"></span></li>
                     <li *ngFor="let thing of fruitListener.partialsequence" [innerHTML]="thing | fruit"></li>
                 </div>
             </ul>
         </div>
 
         <div *ngIf="mode === 'win'" class="question">
-            <h2>Well done!</h2>
+            <h2>Well done! <span class="fruit twa twa-tada"></span></h2>
             <h4>You have correctly answered the question for {{QUESTIONS[currentQuestion].organisation}}.</h4>
             <h4>Please touch any connected item of fruit to continue...</h4>
         </div>
     </div>
 
-    <div *ngIf="currentUser && mode === 'dead'">
-        <div class="lives dead">
-            Out of lives!
+    <div *ngIf="currentUser && mode === 'dead'" class="question dead">
+        <div class="lives">
+            <li *ngFor="let live of createRange(5-currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
         </div>
-        <h2>Sorry, you got too many questions wrong!</h2>
+        <h2>Sorry, you answered incorrectly too many times! <span class="fruit twa twa-sob"></span></h2>
     </div>
 </div>
