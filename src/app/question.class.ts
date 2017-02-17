@@ -80,12 +80,12 @@ export class Questions_All {
 
     public static Q1 = new Question(
         "SCVO Team Digital",
-        "What does the HQ in Good HQ stand for?",
+        "Who is Good HQ being built by?",
         [
-            new Answer("Honorary consulate", false),
-            new Answer("Headquarters", true),
-            new Answer("Highly Qualified", false),
-            new Answer("Hard Questions", false),
+            new Answer("SCVO Comms", false),
+            new Answer("SCVO Digital", false),
+            new Answer("SCVO Labs", true),
+            new Answer("SCVO Golden Retrievers", false),
         ]
     )
     public static Q2 = new Question(
