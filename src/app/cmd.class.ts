@@ -10,4 +10,6 @@ export class Cmd {
     static CODE_DELETE_ALL : string = "DELETE_ALL@DRAGONFRUIT";
     static CODE_PRINT_ALL : string = "PRINT_ALL@DRAGONFRUIT";
     static CODE_PRINT_WINNERS : string = "PRINT_WINNERS@DRAGONFRUIT";
+    static CODE_PICK_WINNERS : string = "PICK_WINNERS@DRAGONFRUIT";
+
 }
