@@ -125,6 +125,7 @@ export class AppComponent implements OnInit {
         return;
       }
       if (isGood = Cmd.INJURE){
+        this.fruitListener
         return this.injureUser();
       }
     }
@@ -213,25 +214,34 @@ export class AppComponent implements OnInit {
 class FruitListener {
 
   sequence : string[] = null;
+  partialsequence : string [] = [];
   index : number = 0;
   lastNote : string = null;
-
+  error : boolean = false;
   constructor () {}
 
   reset() {
     this.sequence = null;
+    this.partialsequence= null;
     this.index = 0;
     this.lastNote = null;
+    this.error = false;
   }
 
   load(sequence : string[]) {
     this.sequence = sequence;
   }
 
+  setIndex(to){
+    this.index = to;
+    this.partialsequence = this.sequence.slice(0, this.index);
+  }
+
   listen(note : string){
     // Right note
     if (this.sequence[this.index] === note){
-      this.index++;
+      this.error = false;
+      this.setIndex(this.index+1);
       this.lastNote = note;
       if (this.index >= this.sequence.length){
         // All done, win!
@@ -248,7 +258,10 @@ class FruitListener {
     }
     else {
       this.lastNote = note;
+      this.setIndex(0);
+      this.error = true;
       return Cmd.INJURE;
+
     }
     // Wrong note
 
