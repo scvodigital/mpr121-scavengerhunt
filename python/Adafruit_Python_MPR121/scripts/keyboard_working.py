@@ -77,7 +77,7 @@ import uinput
 KEY_MAPPING = {
                 0: uinput.KEY_CLOSECD, #Not used
                 1: uinput.KEY_A,  #These are keys used (with SHIFT and ALT)
-                2: uinput.KEY_S,
+                2: uinput.KEY_S,  #C
                 3: uinput.KEY_D,
                 4: uinput.KEY_F,
                 5: uinput.KEY_G,
