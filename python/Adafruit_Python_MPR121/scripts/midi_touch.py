@@ -22,7 +22,7 @@ from time import sleep
 import time
 import Adafruit_MPR121.MPR121 as MPR121
 
-notes=[28,29,31,33,35,36,38,40,41,43,31,33,48,50] #31, 33 was 45,47 
+notes=[28,29,31,33,35,36,38,24,26,43,45,47,48,50] #24, 26 was 40,41 
 
 def setup_capacitive_hat():
 	# Create MPR121 instance.
