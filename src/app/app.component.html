@@ -6,9 +6,9 @@
         <form (ngSubmit)="onSubmit(participant, $event)" [formGroup]="participant">
             <input type="email" formControlName="email" [(ngModel)]="email_input" placeholder="Please enter your email address" autocomplete="off" [autofocus] />
         </form>
-      <div>
-        <p *ngFor="let winner of winnerstext">{{winner}}</p>
-      </div>
+        <div>
+            <p *ngFor="let winner of winnerstext">{{winner}}</p>
+        </div>
     </div>
     <div *ngIf="currentUser && mode !== 'dead'">
         <!-- <h2>This is Logged In mode!</h2> -->
@@ -19,9 +19,9 @@
         </ul>
 
         <div class="winner" *ngIf="progress === WIN && mode === 'select'">
-          <h2>Well done!</h2>
-          <span class="fruit twa twa-5x twa-tada"></span>
-          <h3>You have been entered into our prize draw for today!</h3>
+            <h2>Well done!</h2>
+            <span class="fruit twa twa-4x twa-tada"></span>
+            <h3>You have been entered into our prize draw for today!</h3>
         </div>
 
         <div *ngIf="mode === 'select'">

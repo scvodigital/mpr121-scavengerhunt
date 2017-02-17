@@ -55,21 +55,31 @@ h1 .scvo-logo {
 .lives li .twa-broken-heart {
     margin-top: 0.7rem;
 }
+
 .winner {
     width: 22%;
     float: right;
     clear: right;
+    text-align: center;
+    margin-top: 6.5rem;
 }
 .winner h2 {
-  clear: right;
-  margin: 0;
-  padding: 1em 0 0 0;
-  float: right;
-  font-weight: bold;
-  font-size: 3rem;
-  width: 17.9rem;
-  text-align: center;
+    clear: right;
+    margin: 0;
+    padding: 1em 0 0 0;
+    float: right;
+    font-weight: bold;
+    font-size: 3rem;
+    width: 17.9rem;
+    text-align: center;
 }
+.winner .fruit {
+    margin: 1rem 0 0;
+}
+.winner h3 {
+    font-size: 1.4rem;
+}
+
 .selection {
     margin: 0;
     padding: 0;
