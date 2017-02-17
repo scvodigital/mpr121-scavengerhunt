@@ -71,24 +71,22 @@ export class AppComponent implements OnInit {
 
     onSubmit({ value, valid }: { value:Participant, valid: boolean }, event) {
         event.preventDefault();
-        if (value.email === Cmd.CODE_DELETE_ALL){
+        if (value.email === '') return;
+        if (value.email === Cmd.CODE_DELETE_ALL) {
             return this.st.deleteAll();
         }
-        if (value.email === Cmd.CODE_PRINT_ALL){
+        if (value.email === Cmd.CODE_PRINT_ALL) {
             return this.st.usersToConsole(0);
         }
-        if (value.email === Cmd.CODE_PRINT_WINNERS){
+        if (value.email === Cmd.CODE_PRINT_WINNERS) {
             return this.st.usersToConsole(this.WIN);
         }
-        if (value.email === Cmd.CODE_PICK_WINNERS){
+        if (value.email === Cmd.CODE_PICK_WINNERS) {
             this.winnerstext = this.st.pickWinners(this.WIN);
             return;
         }
-        if (value.email === ''){
-            return;
-        }
         this.winnerstext = [];
-        // console.log(value, valid);
+
         this.currentUser = this.st.getUser(value.email.toLowerCase())
         this.setProgressBar();
 
