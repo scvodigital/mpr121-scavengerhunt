@@ -82,6 +82,7 @@ export class AppComponent implements OnInit {
       this.winnerstext = this.st.pickWinners(this.WIN);
       return
     }
+    this.winnerstext = [];
     // console.log(value, valid);
     this.currentUser = this.st.getUser(value.email.toLowerCase())
     this.setProgressBar();
