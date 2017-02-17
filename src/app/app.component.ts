@@ -31,13 +31,13 @@ export class AppComponent implements OnInit {
   ALLOWED_KEYS = ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyL']
   COMMAND_BACK = 'BACK';
   KEY_MAP = {
-    'KeyA' : 'A',
-    'KeyS' : 'B',
-    'KeyD' : 'C',
-    'KeyF' : 'D',
-    'KeyG' : 'E',
-    'KeyH' : 'F',
-    'KeyJ' : 'G', // Not used, but is a note.
+    'KeyA' : 'B',
+    'KeyS' : 'C',
+    'KeyD' : 'D',
+    'KeyF' : 'E',
+    'KeyG' : 'F',
+    'KeyH' : 'G',
+    'KeyJ' : 'A', // Not used, but is a note.
     // 'KeyK' : 'H',  // I know there is no H, do with this what you will, maybe Change instrument?
     'KeyL' : Cmd.BACK,
   }
