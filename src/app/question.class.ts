@@ -107,9 +107,9 @@ export class Questions_All {
         "How many languages does Browsealoud offer?",
         [
             new Answer("7",  false),
-            new Answer("100", false),
+            new Answer("89", false),
             new Answer("99", true),
-            new Answer("128", false),
+            new Answer("35", false),
         ]
     )
     public static Q4 = new Question(
