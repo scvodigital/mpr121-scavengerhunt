@@ -5,8 +5,7 @@ export class WrongPipe implements PipeTransform {
         let emoji = ['flushed', 'worried', 'frowning', 'anguished',
                      'open-mouth', 'grimacing', 'confused', 'hushed', 'sweat',
                      'weary', 'pensive', 'disappointed', 'confounded',
-                     'fearful', 'cold-sweat', 'persevere', 'cry', 'sob',
-                     'tired-face', 'dizzy-face', 'see-no-evil', 'speak-no-evil'];
+                     'persevere', 'cry', 'sob', 'tired-face', 'dizzy-face'];
         let random_emoji = emoji[Math.floor(random * emoji.length)];
         return '<span class="wrong fruit twa twa-' + random_emoji + '"></span>';
     }
