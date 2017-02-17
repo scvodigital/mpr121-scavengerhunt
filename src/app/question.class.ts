@@ -44,15 +44,8 @@ export class Question {
       for (var j = 0; j < possible.length; j++) {
 
         if (seqchar === possible[j]) {
-
-          if (i % 2 == 0) {
             var newindex = (j + (inputIndex + 1)) % 7;
             out.push(possible.charAt(newindex));
-          }
-          else {
-            var newindex = (j + (inputIndex - 1)) % 7;
-            out.push(possible.charAt(newindex));
-          }
         }
       }
 
