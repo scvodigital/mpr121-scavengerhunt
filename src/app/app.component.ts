@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   // i.e. how many questions to win?
   WIN : number = 6;
   progress : number = 0;
+  wrongEmoji : number = 0;
   fruitListener = new FruitListener();
   currentUser: Participant = null;
   currentQuestion : string = null;
@@ -167,6 +168,7 @@ export class AppComponent implements OnInit {
 
   injureUser() {
     this.currentUser.lives--;
+    this.wrongEmoji = Math.random();
     this.st.saveUser(this.currentUser);
     this.injureEffect();
     if (this.currentUser.lives < 1) this.mode = "dead";

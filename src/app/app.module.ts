@@ -8,6 +8,7 @@ import { Ng2Webstorage } from 'ng2-webstorage';
 import { AppComponent } from './app.component';
 import { FocusDirective } from './focus.directive';
 import { FruitPipe } from './fruit.pipe';
+import { WrongPipe } from './wrong.pipe';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import { FruitPipe } from './fruit.pipe';
     declarations: [
         AppComponent,
         FocusDirective,
-        FruitPipe
+        FruitPipe,
+        WrongPipe
     ],
     providers: [],
     bootstrap: [AppComponent]

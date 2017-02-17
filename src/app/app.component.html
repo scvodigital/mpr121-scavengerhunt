@@ -63,13 +63,21 @@
             </ol>
 
             <ul class="progress">
-                <div *ngIf="fruitListener.error" class="fruit-sequence">
-                    <li><span class="fruit twa twa-point-right"></span></li>
-                    <li><span class="fruit twa twa-sweat"></span></li>
+                <div *ngIf="fruitListener.error">
+                    <div class="hand">
+                        <li><span class="fruit twa twa-point-right"></span></li>
+                    </div>
+                    <div class="fruit-sequence">
+                        <li [innerHTML]="wrongEmoji | wrong"></li>
+                    </div>
                 </div>
-                <div *ngIf="!fruitListener.error" class="fruit-sequence">
-                    <li><span class="fruit twa twa-point-right"></span></li>
-                    <li *ngFor="let thing of fruitListener.partialsequence" [innerHTML]="thing | fruit"></li>
+                <div *ngIf="!fruitListener.error">
+                    <div class="hand">
+                        <li><span class="fruit twa twa-point-right"></span></li>
+                    </div>
+                    <div class="fruit-sequence" *ngIf="fruitListener.partialsequence && fruitListener.partialsequence.length > 0">
+                        <li *ngFor="let thing of fruitListener.partialsequence" [innerHTML]="thing | fruit"></li>
+                    </div>
                 </div>
             </ul>
         </div>
