@@ -46,15 +46,13 @@ h1 .scvo-logo {
     width: 17.9rem;
     text-align: center;
 }
-.lives.dead {
-    font-size: 2.7rem;
-}
 .lives li {
     list-style-type: none;
     display: inline-block;
     float: right;
 }
-.lives li .twa-heart {
+.lives li .twa-heart,
+.lives li .twa-broken-heart {
     margin-top: 0.7rem;
 }
 .winner h2 {
@@ -143,20 +141,32 @@ h1 .scvo-logo {
 }
 
 .progress {
+    font-size: 3.3rem;
+    width: auto;
+    text-align: left;
+    margin: 1rem auto 0;
+    padding: 0;
+}
+.progress .hand {
+    display: inline-block;
+    padding: 0.5rem 0 1.1rem 0.5rem;
+}
+.progress .fruit-sequence {
     background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1.1rem;
     display: inline-block;
     border-radius: 2.6rem;
-    font-size: 3.3rem;
-    width: 69%;
-    text-align: left;
-    margin: 0rem auto;
-    padding: 0.5rem 1.1rem;
 }
 .progress li {
     list-style-type: none;
     display: inline-block;
 }
 .progress li .fruit {
+}
+
+.dead h2 {
+    text-align: center;
+    padding-top: 16.5rem;
 }
 
 form {
