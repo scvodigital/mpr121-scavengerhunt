@@ -171,12 +171,13 @@ export class AppComponent implements OnInit {
     // Play a sound? Special lighting effect? Dunno what to do here.
   }
 
-  handleFruitCommand(command : string) {
+  handleFruitCommand(command: string) {
     if (!this.currentUser){
       console.log("Not logged in, not doing anything");
     } else if (this.mode === 'select') {
       this.setQuestion(command);
     } else if (this.mode === 'go') {
+        console.log(command + "pressed");
       this.answerQuestion(command);
     } else if (this.mode === 'win') {
       this.backToSelect();

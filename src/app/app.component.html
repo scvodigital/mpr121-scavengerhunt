@@ -35,12 +35,10 @@
                 </li>
             </ul>
 
-            <ul class="progress">
-                    <div *ngIf="progressBar.length > 0">
-                        <span class="fruit-sequence" *ngFor="let answer of progressBar">
-                            <span [innerHTML]="answer | fruit"></span>
-                        </span>
-                    </div>
+            <ul *ngIf="progressBar.length > 0" class="progress fruit-sequence">
+                <li *ngFor="let answer of progressBar">
+                    <span [innerHTML]="answer | fruit"></span>
+                </li>
             </ul>
         </div>
 
