@@ -18,11 +18,12 @@
             <li *ngFor="let live of createRange(5-currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
         </ul>
 
-        <div class="winner" *ngIf="progress === WIN">
-          <h2>Congratulations!</h2>
+        <div class="winner" *ngIf="progress === WIN && mode === 'select'">
+          <h2>Well done!</h2>
           <span class="fruit twa twa-5x twa-tada"></span>
           <h3>You have been entered into our prize draw for today!</h3>
         </div>
+
         <div *ngIf="mode === 'select'">
             <!-- <h2>This is Select Mode, press a fruit!</h2> -->
             <!-- <h2>Which organisation have you visited?</h2> -->

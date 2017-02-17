@@ -55,6 +55,11 @@ h1 .scvo-logo {
 .lives li .twa-broken-heart {
     margin-top: 0.7rem;
 }
+.winner {
+    width: 22%;
+    float: right;
+    clear: right;
+}
 .winner h2 {
   clear: right;
   margin: 0;
