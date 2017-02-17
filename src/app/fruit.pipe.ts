@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FruitPipe implements PipeTransform {
     transform(letter: string): string {
         let fruit = '';
+        console.log(letter);
         switch (letter) {
             case 'A':
                 fruit = '<span class="a fruit twa twa-banana"></span>';
@@ -21,7 +22,7 @@ export class FruitPipe implements PipeTransform {
                 break;
             case 'F':
                 fruit = '<span class="f fruit twa twa-pear"></span>';
-                break;
+            break;
             case 'G':
                 fruit = '<span class="g fruit twa twa-pineapple"></span>';
                 break;

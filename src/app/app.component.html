@@ -2,17 +2,20 @@
     <h1>
         <span class="scvo-logo"></span>Scavenger Hunt
     </h1>
-    <div *ngIf="!currentUser" >
+
+    <div *ngIf="!currentUser">
+        <div id="fruit-select" class="fadeOut fast">
+            <div [innerHTML]="lastTouched | fruit" class="fruit-sequence"></div>
+        </div>
         <form (ngSubmit)="onSubmit(participant, $event)" [formGroup]="participant">
             <input type="email" formControlName="email" [(ngModel)]="email_input" placeholder="Please enter your email address" autocomplete="off" [autofocus] />
         </form>
-        <div>
-            <p *ngFor="let winner of winnerstext">{{winner}}</p>
-        </div>
+        <ul>
+            <li *ngFor="let winner of winnerstext">{{winner}}</li>
+        </ul>
     </div>
+
     <div *ngIf="currentUser && mode !== 'dead'">
-        <!-- <h2>This is Logged In mode!</h2> -->
-        <!-- <h2>You have {{currentUser.lives}} Lives</h2> -->
         <ul class="lives">
             <li *ngFor="let live of createRange(currentUser.lives)"><span class="twa twa-heart"></span></li>
             <li *ngFor="let live of createRange(5-currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
@@ -25,19 +28,12 @@
         </div>
 
         <div *ngIf="mode === 'select'">
-            <!-- <h2>This is Select Mode, press a fruit!</h2> -->
-            <!-- <h2>Which organisation have you visited?</h2> -->
             <ul class="selection">
                 <li *ngFor="let key of questionKeys">
                     <div *ngIf="currentUser.progress[key] === false" [innerHTML]="key | fruit" class="question-select"></div>
                     <div *ngIf="currentUser.progress[key] === true" class="question-done"><span class="a fruit twa twa-white-check-mark"></span></div>
                     <h2>{{QUESTIONS[key].organisation}}</h2>
                     <h3>{{QUESTIONS[key].question}}</h3>
-                    <!--<ul *ngFor="let answer of QUESTIONS[key].answers">-->
-                    <!--<li>-->
-                    <!--<p>{{answer.sequence}} {{answer.text}}</p>-->
-                    <!--</li>-->
-                    <!--</ul>-->
                 </li>
             </ul>
 
@@ -51,7 +47,6 @@
         </div>
 
         <div *ngIf="mode === 'go'" class="question">
-            <!-- <h2 *ngIf="mode === 'go'">This is go mode! Question is... {{currentQuestion}}</h2> -->
             <h2>{{QUESTIONS[currentQuestion].organisation}}</h2>
             <h3>{{QUESTIONS[currentQuestion].question}}</h3>
             <ol class="answers">

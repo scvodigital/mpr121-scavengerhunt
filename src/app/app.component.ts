@@ -23,10 +23,12 @@ export class AppComponent implements OnInit {
     participant: FormGroup;
     mode: string = "select";
     lastKey: string = null;
+    lastTouched: string = "Z";
     email_input: string = null;
     questionKeys: string[];
     progressBar: string[] = [];
     winnerstext: string[] = [];
+    fruitTimeout: any;
     public focusSettingEventEmitter = new EventEmitter<boolean>();
 
     // Don't use key B, alt shift and B does something!
@@ -40,7 +42,7 @@ export class AppComponent implements OnInit {
         'KeyG' : 'F',
         'KeyH' : 'G',
         'KeyJ' : 'A', // Not used, but is a note.
-        // 'KeyK' : 'H',  // I know there is no H, do with this what you will, maybe Change instrument?
+        'KeyK' : 'B',  // I know there is no H, do with this what you will, maybe Change instrument?
         'KeyL' : Cmd.BACK,
     }
 
@@ -209,8 +211,21 @@ export class AppComponent implements OnInit {
         if (this.ALLOWED_KEYS.indexOf(e.code) > -1){
             let command = this.KEY_MAP[e.code];
             this.handleFruitCommand(command);
+            this.handleFruitTouch(command);
         }
         return;
+    }
+
+    handleFruitTouch(command: string) {
+        this.lastTouched = command;
+        clearTimeout(this.fruitTimeout);
+        var element = document.getElementById('fruit-select');
+        if (element) {
+            element.className = 'fadeIn fast';
+            this.fruitTimeout = setTimeout(() => {
+                element.className = 'fadeOut slow';
+            }, 1000);
+        }
     }
 
     createRange(number) {

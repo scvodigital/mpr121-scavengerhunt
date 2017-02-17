@@ -166,12 +166,71 @@ h1 .scvo-logo {
     display: inline-block;
     padding: 0.5rem 0 1.1rem 0.5rem;
 }
+#fruit-select {
+    font-size: 3rem;
+    text-align: center;
+    position: absolute;
+    top: 2.9rem;
+    right: 2.9rem;
+}
+#fruit-select .fruit-sequence,
 .progress .fruit-sequence {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5rem 1.1rem;
     display: inline-block;
     border-radius: 2.6rem;
 }
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.fadeIn {
+    -webkit-animation: fadeIn;
+    animation: fadeIn;
+    opacity: 1;
+}
+.fadeOut {
+    -webkit-animation: fadeOut;
+    animation: fadeOut;
+    opacity: 0;
+}
+.fast {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+.slow {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
 .progress li {
     list-style-type: none;
     display: inline-block;
