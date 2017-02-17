@@ -82,7 +82,10 @@ export class AppComponent implements OnInit {
         }
         if (value.email === Cmd.CODE_PICK_WINNERS){
             this.winnerstext = this.st.pickWinners(this.WIN);
-            return
+            return;
+        }
+        if (value.email === ''){
+            return;
         }
         this.winnerstext = [];
         // console.log(value, valid);
