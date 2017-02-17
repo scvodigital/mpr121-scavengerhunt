@@ -59,13 +59,16 @@
                     </p>
                 </li>
             </ol>
-          <span class="fruit-sequence">
-            <span *ngIf="fruitListener.error"><p>XXX Bad fruit - Start again!</p></span>
-            <div *ngIf="!fruitListener.error">
-            <span *ngFor="let thing of fruitListener.partialsequence" [innerHTML]="thing | fruit"></span>
-            </div>
-          </span>
 
+            <ul class="progress fruit-sequence">
+                <div *ngIf="fruitListener.error">
+                    <li>XXX Bad fruit - Start again!</li>
+                </div>
+                <div *ngIf="!fruitListener.error">
+                    <li>Selected:</li>
+                    <li *ngFor="let thing of fruitListener.partialsequence" [innerHTML]="thing | fruit"></li>
+                </div>
+            </ul>
         </div>
 
         <div *ngIf="mode === 'win'" class="question">
