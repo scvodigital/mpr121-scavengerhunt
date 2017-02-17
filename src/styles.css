@@ -98,6 +98,9 @@ h1 .scvo-logo {
     border-radius: 10rem;
     padding: 1.3rem;
 }
+.selection li .question-done .fruit {
+    background-color: transparent;
+}
 .question h2 {
     font-size: 3rem;
 }
