@@ -37,7 +37,7 @@ h1 .scvo-logo {
     background: #fff;
     display: inline-block;
     margin: 0;
-    padding: 0 0.7rem 0 0;
+    padding: 0 0.9rem 0 0.1rem;
     float: right;
     border-radius: 10rem;
     color: #1976D2;
@@ -54,8 +54,8 @@ h1 .scvo-logo {
     display: inline-block;
     float: right;
 }
-.lives li .fruit {
-    margin-top: 1rem;
+.lives li .twa-heart {
+    margin-top: 0.7rem;
 }
 .winner h2 {
   clear: right;
@@ -86,14 +86,20 @@ h1 .scvo-logo {
     text-align: center;
 }
 .selection li h2 {
-    margin: 0 0 1rem;
+    margin: 0 0 0.2rem;
 }
 .selection li h3 {
     margin: 0;
 }
 .selection li .fruit {
-    margin: 0.5rem 0 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 0 0.2rem;
     font-size: 4rem;
+    border-radius: 10rem;
+    padding: 1.3rem;
+}
+.selection li .question-done .fruit {
+    background-color: transparent;
 }
 .question h2 {
     font-size: 3rem;
@@ -113,11 +119,19 @@ h1 .scvo-logo {
     border-bottom: 0.2rem solid rgba(255, 255, 255, 0.5);
     font-weight: bold;
 }
+.question .answers li:last-child {
+    border-bottom: none;
+}
 .question .answers li p {
     margin: 1.8rem 0;
 }
-.question .answers li:last-child {
-    border-bottom: none;
+.question .answers li p .fruit-sequence {
+    font-size: 3.3rem;
+    line-height: 3.3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: -4.25rem 0 0;
+    padding: 1rem 1.1rem;
+    border-radius: 10rem;
 }
 .question .answers .answer {
     font-weight: normal;
@@ -129,24 +143,20 @@ h1 .scvo-logo {
 }
 
 .progress {
-    background: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
     display: inline-block;
-    padding: 0 1em;
-    border-radius: 10rem;
-    color: #1976D2;
-    font-weight: bold;
-    font-size: 3rem;
-    width: 21em;
+    border-radius: 2.6rem;
+    font-size: 3.3rem;
+    width: 69%;
     text-align: left;
-    margin: -1rem -3rem;
+    margin: 0rem auto;
+    padding: 0.5rem 1.1rem;
 }
 .progress li {
     list-style-type: none;
     display: inline-block;
-    /*float: left;*/
 }
 .progress li .fruit {
-    margin-top: 1rem;
 }
 
 form {

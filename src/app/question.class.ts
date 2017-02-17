@@ -89,74 +89,74 @@ export class Questions_All {
     // Ode to joy: EEFGG FEDCC DEEDD - EEFGG FEDCC DEDCC
   ]
 
-  public static Q1 = new Question(
-    "SCVO Team Digital",
-    "What does the HQ in Good HQ stand for?",
-    [
-      new Answer("Honorary consulate", false),
-      new Answer("Headquarters", true),
-      new Answer("Highly Qualified", false),
-      new Answer("Hard Questions", false),
-    ]
-  )
-  public static Q2 = new Question(
-    "Organisation 2",
-    "This is a very long question. I don't know why anyone would want to have a question as long as this one but here it is in order to test. What was the question?",
-    [
-      new Answer("This is a wrong answer", false),
-      new Answer("This is another RIGHT answer", true),
-      new Answer("This is a further wrong answer", false),
-      new Answer("This is another wrong answer that is longer than the rest", false),
-    ]
-  )
-  public static Q3 = new Question(
-    "Organisation 3",
-    "This is a question",
-    [
-      new Answer("This is a wrong answer",  false),
-      new Answer("This is another wrong answer", false),
-      new Answer("This is a further RIGHT answer that is longer than the rest", true),
-      new Answer("This is another wrong answer", false),
-    ]
-  )
-  public static Q4 = new Question(
-    "Organisation 4",
-    "This is a question",
-    [
-      new Answer("This is a RIGHT answer",  true),
-      new Answer("This is another wrong answer that is longer than the rest", false),
-      new Answer("This is a further wrong answer", false),
-      new Answer("This is another wrong answer and more", false),
-    ]
-  )
-  public static Q5 = new Question(
-    "Organisation 5",
-    "This is a question that is longer than the rest",
-    [
-      new Answer("This is a wrong answer",  false),
-      new Answer("This is another wrong answer that is longer than the rest", false),
-      new Answer("This is a further wrong answer", false),
-      new Answer("This is another RIGHT answer that is longer than the rest", true),
-    ]
-  )
-  public static Q6 = new Question(
-    "Organisation 6",
-    "This is a question",
-    [
-      new Answer("This is a wrong answer",  false),
-      new Answer("This is another RIGHT answer", true),
-      new Answer("This is a further wrong answer", false),
-      new Answer("This is another wrong answer and a half", false),
-    ]
-  )
-  // public static Q7 = new Question(
-  //     "Organisation 7",
-  //     "This is a question",
-  //     [
-  //         new Answer("This is a wrong answer",  false),
-  //         new Answer("This is another wrong answer", false),
-  //         new Answer("This is a further RIGHT answer", true),
-  //         new Answer("This is another wrong answer and a half", false),
-  //     ]
-  // )
+    public static Q1 = new Question(
+        "SCVO Team Digital",
+        "Who is Good HQ being built by?",
+        [
+            new Answer("SCVO Comms", false),
+            new Answer("SCVO Digital", false),
+            new Answer("SCVO Labs", true),
+            new Answer("SCVO Golden Retrievers", false),
+        ]
+    )
+    public static Q2 = new Question(
+        "Organisation 2",
+        "This is a very long question. I don't know why anyone would want to have a question as long as this one but here it is in order to test. What was the question?",
+        [
+            new Answer("This is a wrong answer", false),
+            new Answer("This is another RIGHT answer", true),
+            new Answer("This is a further wrong answer", false),
+            new Answer("This is another wrong answer that is longer than the rest", false),
+        ]
+    )
+    public static Q3 = new Question(
+        "Organisation 3",
+        "This is a question",
+        [
+            new Answer("This is a wrong answer",  false),
+            new Answer("This is another wrong answer", false),
+            new Answer("This is a further RIGHT answer that is longer than the rest", true),
+            new Answer("This is another wrong answer", false),
+        ]
+    )
+    public static Q4 = new Question(
+        "Organisation 4",
+        "This is a question",
+        [
+            new Answer("This is a RIGHT answer",  true),
+            new Answer("This is another wrong answer that is longer than the rest", false),
+            new Answer("This is a further wrong answer", false),
+            new Answer("This is another wrong answer and more", false),
+        ]
+    )
+    public static Q5 = new Question(
+        "Organisation 5",
+        "This is a question that is longer than the rest",
+        [
+            new Answer("This is a wrong answer",  false),
+            new Answer("This is another wrong answer that is longer than the rest", false),
+            new Answer("This is a further wrong answer", false),
+            new Answer("This is another RIGHT answer that is longer than the rest", true),
+        ]
+    )
+    public static Q6 = new Question(
+        "Organisation 6",
+        "This is a question",
+        [
+            new Answer("This is a wrong answer",  false),
+            new Answer("This is another RIGHT answer", true),
+            new Answer("This is a further wrong answer", false),
+            new Answer("This is another wrong answer and a half", false),
+        ]
+    )
+    // public static Q7 = new Question(
+    //     "Organisation 7",
+    //     "This is a question",
+    //     [
+    //         new Answer("This is a wrong answer",  false),
+    //         new Answer("This is another wrong answer", false),
+    //         new Answer("This is a further RIGHT answer", true),
+    //         new Answer("This is another wrong answer and a half", false),
+    //     ]
+    // )
 }

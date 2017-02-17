@@ -31,13 +31,13 @@ export class AppComponent implements OnInit {
   ALLOWED_KEYS = ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyL']
   COMMAND_BACK = 'BACK';
   KEY_MAP = {
-    'KeyA' : 'A',
-    'KeyS' : 'B',
-    'KeyD' : 'C',
-    'KeyF' : 'D',
-    'KeyG' : 'E',
-    'KeyH' : 'F',
-    'KeyJ' : 'G', // Not used, but is a note.
+    'KeyA' : 'B',
+    'KeyS' : 'C',
+    'KeyD' : 'D',
+    'KeyF' : 'E',
+    'KeyG' : 'F',
+    'KeyH' : 'G',
+    'KeyJ' : 'A', // Not used, but is a note.
     // 'KeyK' : 'H',  // I know there is no H, do with this what you will, maybe Change instrument?
     'KeyL' : Cmd.BACK,
   }
@@ -172,12 +172,13 @@ export class AppComponent implements OnInit {
     // Play a sound? Special lighting effect? Dunno what to do here.
   }
 
-  handleFruitCommand(command : string) {
+  handleFruitCommand(command: string) {
     if (!this.currentUser){
       console.log("Not logged in, not doing anything");
     } else if (this.mode === 'select') {
       this.setQuestion(command);
     } else if (this.mode === 'go') {
+        console.log(command + "pressed");
       this.answerQuestion(command);
     } else if (this.mode === 'win') {
       this.backToSelect();
