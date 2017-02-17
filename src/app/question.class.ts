@@ -42,8 +42,9 @@ export class Question {
     for (var i = 0; i < inputsequence.length; i++) {
       let seqchar = inputsequence[i];
       for (var j = 0; j < possible.length; j++) {
+
         if (seqchar === possible[j]) {
-            var newindex = (i + j + (inputIndex + 1)) % 7;
+            var newindex = (j + (inputIndex + 1)) % 7;
             out.push(possible.charAt(newindex));
         }
       }
