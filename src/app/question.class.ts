@@ -83,7 +83,7 @@ export class Questions_All {
   ]
 
     public static Q1 = new Question(
-        "SCVO Team Digital (you are here!)",
+        "SCVO Team Digital (here!)",
         "Who is Good HQ being built by?",
         [
             new Answer("SCVO Comms", false),
