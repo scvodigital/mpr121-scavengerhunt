@@ -88,6 +88,8 @@ export class AppComponent implements OnInit {
     this.currentUser = this.st.getUser(value.email.toLowerCase())
     this.setProgressBar();
 
+    this.wrongEmoji = Math.random();
+    if (this.currentUser.lives < 1) this.mode = "dead";
   }
 
   logOut() {

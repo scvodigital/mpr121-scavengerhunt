@@ -91,8 +91,8 @@
 
     <div *ngIf="currentUser && mode === 'dead'" class="question dead">
         <div class="lives">
-            <li *ngFor="let live of createRange(5-currentUser.lives)"><span class="twa twa-broken-heart"></span></li>
+            <li *ngFor="let live of createRange(5)"><span class="twa twa-broken-heart"></span></li>
         </div>
-        <h2>Sorry, you answered incorrectly too many times! <span class="fruit twa twa-sob"></span></h2>
+        <h2>Sorry, you answered incorrectly too many times! <span [innerHTML]="wrongEmoji | wrong"></span></h2>
     </div>
 </div>
