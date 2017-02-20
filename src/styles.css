@@ -80,6 +80,24 @@ h1 .scvo-logo {
     font-size: 1.4rem;
 }
 
+.logout {
+    width: 22%;
+    float: right;
+    clear: right;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.logout h2 {
+    margin: 0;
+}
+.logout .fruit {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 0 0.2rem;
+    font-size: 4rem;
+    border-radius: 10rem;
+    padding: 1.3rem;
+}
+
 .selection {
     margin: 0;
     padding: 0;
