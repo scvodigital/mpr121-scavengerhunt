@@ -27,7 +27,7 @@
             <h3>You have been entered into our prize draw for today!</h3>
         </div>
 
-        <div class="logout">
+        <div *ngIf="mode === 'select'" class="logout">
             <div class="question-select">
                 <span [innerHTML]="'BACK' | fruit"></span><br />
                 <h2>Logout</h2>
