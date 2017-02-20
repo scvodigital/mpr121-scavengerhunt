@@ -73,13 +73,13 @@ def midiExample():
     #Not all instruments will work :(, I only tested this
     GRAND_PIANO = 0
     CHURCH_ORGAN = 19
-    # GUITAR=25
-    # DRUMB=115
-    # SAX=65
-    # VIOLA=42
-    # TROMBONE=58
+    GUITAR=25
+    DRUMB=115
+    SAX=65
+    VIOLA=42
+    TROMBONE=58
 
-    instrument_array=[GRAND_PIANO,CHURCH_ORGAN]
+    instrument_array=[GRAND_PIANO,CHURCH_ORGAN,TROMBONE]
     current_instrument=0
 
     #Init the pygame system
