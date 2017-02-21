@@ -6,7 +6,7 @@ export class FruitPipe implements PipeTransform {
         console.log(letter);
         switch (letter) {
             case 'A':
-                fruit = '<span class="a fruit twa twa-lemon"></span>';
+                fruit = '<span class="a fruit twa twa-melon"></span>';
                 break;
             case 'B':
                 fruit = '<span class="b fruit twa twa-pineapple"></span>';
@@ -27,7 +27,7 @@ export class FruitPipe implements PipeTransform {
                 fruit = '<span class="g fruit twa twa-green-apple"></span>';
                 break;
             case 'BACK':
-                fruit = '<span class="g fruit twa twa-melon"></span>';
+                fruit = '<span class="g fruit twa twa-lemon"></span>';
                 break;
         }
         return fruit;
