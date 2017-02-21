@@ -124,7 +124,7 @@ export class Questions_All {
     )
     public static Q5 = new Question(
         "RNIB Online Today (stand 94)",
-        "If you have no useful sight how would you be able to tell the difference between a tin of beans and a tin of custard without opening them?",
+        "Without useful sight how would you tell the difference between unopened tins of beans or custard?",
         [
             new Answer("Tins with savoury contents have ring pulls, sweet don't", false),
             new Answer("The texture of the labels", false),
