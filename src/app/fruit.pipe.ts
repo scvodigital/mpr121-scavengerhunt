@@ -18,7 +18,7 @@ export class FruitPipe implements PipeTransform {
                 fruit = '<span class="d fruit twa twa-tangerine"></span>';
                 break;
             case 'E':
-                fruit = '<span class="e fruit twa twa-banana"></span>';
+                fruit = '<span class="e fruit twa twa-pear"></span>';
                 break;
             case 'F':
                 fruit = '<span class="f fruit twa twa-banana"></span>';
