@@ -93,8 +93,8 @@ export class Questions_All {
         ]
     )
     public static Q2 = new Question(
-        "Graphics Coop (stand ?)",
-        "What is a service Graphics Coop does not provide for third sector organisations?",
+        "graphics.coop (stand 49)",
+        "What is a service graphics.coop does not provide for third sector organisations?",
         [
             new Answer("Design", false),
             new Answer("Digital", false),
@@ -103,7 +103,7 @@ export class Questions_All {
         ]
     )
     public static Q3 = new Question(
-        "Browsealoud (stand 7)",
+        "Browsealoud Texthelp (stand 7)",
         "How many languages does Browsealoud offer?",
         [
             new Answer("7",  false),
@@ -113,7 +113,7 @@ export class Questions_All {
         ]
     )
     public static Q4 = new Question(
-        "OSCR (stand 3)",
+        "Scottish Charity Regulator (stand 3)",
         "What is the new guidance launched at the Gathering called?",
         [
             new Answer("Being a Charity in Scotland",  true),
@@ -123,7 +123,7 @@ export class Questions_All {
         ]
     )
     public static Q5 = new Question(
-        "RNIB (stand ?)",
+        "RNIB Online Today (stand 94)",
         "If you have no useful sight how would you be able to tell the difference between a tin of beans and a tin of custard without opening them?",
         [
             new Answer("Tins with savoury contents have ring pulls, sweet don't", false),
@@ -133,7 +133,7 @@ export class Questions_All {
         ]
     )
     public static Q6 = new Question(
-        "SCVO Welcome Stand (stand 9)",
+        "SCVO Welcome Stand (by entrance)",
         "Which organisation organises the Gathering?",
         [
             new Answer("Third Force News", false),
