@@ -31,3 +31,7 @@ Wait for webpack to serve the app then visit localhost:4200
 We ran this app in a web browser in kiosk mode (set to load on boot) which
 meant that all you needed to do when booting the system was to ensure your
 fruit was plugged in then run a single shell script.
+
+Thanks to José Federico Ramos Ortega for the wonderful guidance and example
+Python scripts provided here:
+http://www.instructables.com/id/Sombrero-Capacitivo-de-Raspberry-Pi/ [ES]
